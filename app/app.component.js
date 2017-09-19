@@ -25,7 +25,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n    <div class=\"container\">\n     <h1>Recipe List {{month}}/{{day}}/{{year}}</h1>\n     <h3>{{recipe}}</h3>\n      <div *ngFor=\"let selectedRecipe of recipes\">\n        <h3 (click)=\"selectedRecipe.toggle()\">{{selectedRecipe.title}}</h3>\n        <div *ngIf=\"selectedRecipe.showHide\">\n        <p>Ingredients:</p>\n        <ul>\n          <li *ngFor=\"let currentIngredient of selectedRecipe.ingredients\">{{currentIngredient}}</li>\n        </ul>\n        <p>Directions:</p>\n        <ul>\n          <li *ngFor=\"let currentDirection of selectedRecipe.directions\">{{currentDirection}}</li>\n        </ul>\n        </div>\n      </div>\n    </div>\n    "
+        template: "\n    <div class=\"container\">\n     <h1>Recipe List {{month}}/{{day}}/{{year}}</h1>\n     <h2>{{recipe}}</h2>\n      <div *ngFor=\"let selectedRecipe of recipes\">\n        <h3 (click)=\"selectedRecipe.toggle()\">{{selectedRecipe.title}}</h3>\n        <div *ngIf=\"selectedRecipe.showHide\">\n        <p>Ingredients:</p>\n        <ul>\n          <li *ngFor=\"let currentIngredient of selectedRecipe.ingredients\">{{currentIngredient}}</li>\n        </ul>\n        <p>Directions:</p>\n        <ul>\n          <li *ngFor=\"let currentDirection of selectedRecipe.directions\">{{currentDirection}}</li>\n        </ul>\n        </div>\n      </div>\n    </div>\n    "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

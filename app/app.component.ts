@@ -6,7 +6,7 @@ import { Recipe } from './recipe.model';
   template: `
     <div class="container">
      <h1>Recipe List {{month}}/{{day}}/{{year}}</h1>
-     <h3>{{recipe}}</h3>
+     <h2>{{recipe}}</h2>
       <div *ngFor="let selectedRecipe of recipes">
         <h3 (click)="selectedRecipe.toggle()">{{selectedRecipe.title}}</h3>
         <div *ngIf="selectedRecipe.showHide">
