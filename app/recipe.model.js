@@ -5,7 +5,11 @@ var Recipe = (function () {
         this.title = title;
         this.ingredients = ingredients;
         this.directions = directions;
+        this.showHide = false;
     }
+    Recipe.prototype.toggle = function () {
+        this.showHide = !this.showHide;
+    };
     return Recipe;
 }());
 exports.Recipe = Recipe;
