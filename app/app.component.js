@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var recipe_model_1 = require("./recipe.model");
 var AppComponent = (function () {
     function AppComponent() {
         this.recipe = 'Banana Pancakes and shit';
@@ -15,17 +14,13 @@ var AppComponent = (function () {
         this.month = this.currentTime.getMonth() + 1;
         this.day = this.currentTime.getDate();
         this.year = this.currentTime.getFullYear();
-        this.recipes = [
-            new recipe_model_1.Recipe('Banana Pancakes', ['1 Egg', '2 Tbspn Sugar', '1.5 cups flour', '1 tspn vanilla extract', '1 banana', '3/4 cup of milk', '2 tspn baking powder', '1 tspn baking soda'], ['Add all ingredients to bowl and mix', 'make some delicious fucking banana pancakes']),
-            new recipe_model_1.Recipe('Banana  Bacon Pancakes', ['1 Egg', '2 Tbspn Sugar', '1.5 cups flour', '1 tspn vanilla extract', '1 banana', '3/4 cup of milk', '2 tspn baking powder', '1 tspn baking soda'], ['Cook up that bacon till it`s crispy, and crumble it up', 'Add all ingredients to bowl and mix', 'make some delicious fucking banana pancakes'])
-        ];
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n    <div class=\"container\">\n     <h1>Recipe List {{month}}/{{day}}/{{year}}</h1>\n     <h2>{{recipe}}</h2>\n      <div *ngFor=\"let selectedRecipe of recipes\">\n        <h3 (click)=\"selectedRecipe.toggle()\">{{selectedRecipe.title}}</h3>\n        <div *ngIf=\"selectedRecipe.showHide\">\n        <p>Ingredients:</p>\n        <ul>\n          <li *ngFor=\"let currentIngredient of selectedRecipe.ingredients\">{{currentIngredient}}</li>\n        </ul>\n        <p>Directions:</p>\n        <ul>\n          <li *ngFor=\"let currentDirection of selectedRecipe.directions\">{{currentDirection}}</li>\n        </ul>\n        </div>\n      </div>\n    </div>\n    "
+        template: "\n    <div class=\"container\">\n     <h1>Recipe List {{month}}/{{day}}/{{year}}</h1>\n     <h2>{{recipe}}</h2>\n\n     <recipe-list></recipe-list>\n\n      <recipe-edit [childSelectedRecipe]=\"selectedRecipe\"></recipe-edit>\n    </div>\n    "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
